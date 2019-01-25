@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.FragCreateUser">
+
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <EditText
+            android:id="@+id/edtFullName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="23dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginRight="23dp"
+            android:background="@drawable/rounded_edt_bg"
+            android:ems="10"
+            android:hint="@string/full_name"
+            android:imeOptions="actionNext"
+            android:inputType="textCapWords|textPersonName"
+            android:padding="10dp"
+            android:textColor="@android:color/white"
+            android:textColorHint="@color/hint_color" />
+        <EditText
+            android:id="@+id/edtEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="23dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="23dp"
+            android:background="@drawable/rounded_edt_bg"
+            android:ems="10"
+            android:hint="@string/email_id"
+            android:imeOptions="actionNext"
+            android:inputType="textEmailAddress"
+            android:padding="10dp"
+            android:textColor="@android:color/white"
+            android:textColorHint="@color/hint_color" />
+        <EditText
+            android:id="@+id/edtPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="23dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="23dp"
+            android:background="@drawable/rounded_edt_bg"
+            android:ems="10"
+            android:hint="@string/password"
+            android:imeOptions="actionNext"
+            android:inputType="text"
+            android:padding="10dp"
+            android:textColor="@android:color/white"
+            android:textColorHint="@color/hint_color" />
+
+        <EditText
+            android:id="@+id/edtAddress1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="23dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="23dp"
+            android:background="@drawable/rounded_edt_bg"
+            android:ems="10"
+            android:hint="@string/address_1"
+            android:imeOptions="actionNext"
+            android:inputType="text"
+            android:padding="10dp"
+            android:textColor="@android:color/white"
+            android:textColorHint="@color/hint_color" />
+
+        <EditText
+            android:id="@+id/edtAddress2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="23dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="23dp"
+            android:background="@drawable/rounded_edt_bg"
+            android:ems="10"
+            android:hint="@string/address_2"
+            android:imeOptions="actionNext"
+            android:inputType="text"
+            android:padding="10dp"
+            android:textColor="@android:color/white"
+            android:textColorHint="@color/hint_color" />
+
+        <EditText
+            android:id="@+id/edtCity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="23dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="23dp"
+            android:background="@drawable/rounded_edt_bg"
+            android:ems="10"
+            android:hint="@string/city"
+            android:imeOptions="actionDone"
+            android:inputType="textCapWords"
+            android:padding="10dp"
+            android:textColor="@android:color/white"
+            android:textColorHint="@color/hint_color" />
+        <EditText
+            android:id="@+id/edtMobile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="23dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="23dp"
+            android:background="@drawable/rounded_edt_bg"
+            android:ems="10"
+            android:hint="@string/mobile"
+            android:imeOptions="actionDone"
+            android:inputType="phone"
+            android:padding="10dp"
+            android:textColor="@android:color/white"
+            android:textColorHint="@color/hint_color" />
+
+        <Button
+            android:id="@+id/btnSignUp"
+            style="@style/button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="23dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginRight="23dp"
+            android:layout_marginBottom="40dp"
+            android:background="@drawable/button_blue"
+            android:text="@string/sign_up" />
+    </LinearLayout>
+</ScrollView>
+
+
+
+</LinearLayout>

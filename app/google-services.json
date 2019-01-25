@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "344468520942",
+    "firebase_url": "https://productbooking-e99c9.firebaseio.com",
+    "project_id": "productbooking-e99c9",
+    "storage_bucket": "productbooking-e99c9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:344468520942:android:01cc500c1a1707ca",
+        "android_client_info": {
+          "package_name": "com.example.pranav.productbooking"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "344468520942-0fnsmvtvd1u3rpgh4m216unvtg5to7pj.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.pranav.productbooking",
+            "certificate_hash": "19ef41426ec713947089b32d97505c1fb2a5d7c9"
+          }
+        },
+        {
+          "client_id": "344468520942-8jno0mufbq4s1et73vq6bqjhbjaqh9jb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDZgGYbG6EBUgWOEFwgePLspgVzyceUCnw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "344468520942-8jno0mufbq4s1et73vq6bqjhbjaqh9jb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

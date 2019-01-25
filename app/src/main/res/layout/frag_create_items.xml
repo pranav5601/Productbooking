@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".fragments.FragCreateItems">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <EditText
+                android:id="@+id/edtItemName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="23dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginRight="23dp"
+                android:background="@drawable/rounded_edt_bg"
+                android:ems="10"
+                android:hint="@string/item_name"
+                android:imeOptions="actionNext"
+                android:inputType="textCapWords"
+                android:padding="10dp"
+                android:textColor="@android:color/white"
+                android:textColorHint="@color/hint_color" />
+            <EditText
+                android:id="@+id/edtItemQty"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="23dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="23dp"
+                android:background="@drawable/rounded_edt_bg"
+                android:ems="10"
+                android:hint="@string/quantity"
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                android:padding="10dp"
+                android:textColor="@android:color/white"
+                android:textColorHint="@color/hint_color" />
+            <EditText
+                android:id="@+id/edtItemSize"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="23dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="23dp"
+                android:background="@drawable/rounded_edt_bg"
+                android:ems="10"
+                android:hint="@string/size"
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                android:padding="10dp"
+                android:textColor="@android:color/white"
+                android:textColorHint="@color/hint_color"
+                tools:ignore="TextFields" />
+
+            <EditText
+                android:id="@+id/edtItemMrp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="23dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="23dp"
+                android:background="@drawable/rounded_edt_bg"
+                android:ems="10"
+                android:hint="@string/price"
+                android:imeOptions="actionDone"
+                android:inputType="number"
+                android:padding="10dp"
+                android:textColor="@android:color/white"
+                android:textColorHint="@color/hint_color" />
+
+
+
+            <Button
+                android:id="@+id/btnAddItem"
+                style="@style/button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="23dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginRight="23dp"
+                android:layout_marginBottom="40dp"
+                android:background="@drawable/button_blue"
+                android:text="@string/add_item" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
