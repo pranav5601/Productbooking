@@ -3,11 +3,9 @@ package com.example.pranav.productbooking.fragments
 import android.view.View
 import com.example.pranav.productbooking.R
 import com.example.pranav.productbooking.helper.PrefKeys
-import com.google.firebase.database.FirebaseDatabase
 import com.pixplicity.easyprefs.library.Prefs
 import com.swyft.app.helper.Utils
 import kotlinx.android.synthetic.main.frag_home.*
-import kotlin.reflect.jvm.internal.impl.load.java.Constant
 
 
 class FragHome : FragBase() {
@@ -51,7 +49,9 @@ class FragHome : FragBase() {
             Utils.replaceFragmentToActivity(baseContext.supportFragmentManager,FragCreateItems(),R.id.fragMainContainer)
         }
         btnShowList.setOnClickListener {
-            Utils.replaceFragmentToActivity(baseContext.supportFragmentManager,FragDisplayItems(),R.id.fragMainContainer)
+            val fragDisplayItems= FragDisplayItems()
+            fragDisplayItems.getInstanse(FragDisplayItems().javaClass.simpleName)
+            Utils.replaceFragmentToActivity(baseContext.supportFragmentManager,fragDisplayItems,R.id.fragMainContainer)
 
         }
 
