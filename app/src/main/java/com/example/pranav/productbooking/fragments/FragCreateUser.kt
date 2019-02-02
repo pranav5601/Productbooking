@@ -68,6 +68,7 @@ class FragCreateUser : FragBase() {
                                 ?.child(mAuth?.uid)
                             val user =  User()
                         user.user_name = edtFullName.text.toString()
+                        user.user_id = mAuth?.uid.toString()
                         user.email_id = edtEmail.text.toString()
                         user.password = edtPassword.text.toString()
                         user.address_1 = edtAddress1.text.toString()
@@ -75,6 +76,7 @@ class FragCreateUser : FragBase() {
                         user.city = edtCity.text.toString()
                         user.mobile = edtMobile.text.toString()
                         user.status = "1"
+
 
                         mUserReference?.setValue(user)?.addOnCompleteListener(baseContext){
                             task -> if(task.isSuccessful){

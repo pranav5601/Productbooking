@@ -92,7 +92,8 @@ class FragLogin : FragBase(){
 
                         }
 
-                    } else {
+                    }else {
+                        closeLoader()
                         Toast.makeText(context, Objects.requireNonNull<Exception>(task.exception).message, Toast.LENGTH_SHORT).show()
                     }
 

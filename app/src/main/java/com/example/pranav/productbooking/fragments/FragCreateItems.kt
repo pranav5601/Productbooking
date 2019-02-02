@@ -1,13 +1,5 @@
 package com.example.pranav.productbooking.fragments
 
-import android.content.Context
-import android.net.Uri
-import android.os.Bundle
-import android.support.v4.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-
 import com.example.pranav.productbooking.R
 import com.example.pranav.productbooking.helper.Constant
 import com.example.pranav.productbooking.helper.PrefKeys
@@ -16,11 +8,12 @@ import com.google.firebase.database.FirebaseDatabase
 import com.pixplicity.easyprefs.library.Prefs
 import com.swyft.app.helper.Utils
 import kotlinx.android.synthetic.main.frag_create_items.*
-import kotlinx.android.synthetic.main.frag_login.*
 
 class FragCreateItems : FragBase() {
 
-    val itemRef = FirebaseDatabase.getInstance().reference.child(Constant.ITEMS)
+    private val mDatabase = FirebaseDatabase.getInstance()
+    private val itemRef = mDatabase.reference.child(Constant.ITEMS)
+    private val userRef = mDatabase.reference.child(Constant.USER)
     override fun getRecourseLayout(): Int = R.layout.frag_create_items
 
     override fun setUpView() {
@@ -32,29 +25,48 @@ class FragCreateItems : FragBase() {
 
     private fun initClick() {
         btnAddItem.setOnClickListener {
-            showLoader()
             if (validateData()) {
+                showLoader()
                 val items = Items()
                 items.from_id = Prefs.getString(PrefKeys.USER_ID,"")
                 items.item_name = edtItemName.text.toString()
                 items.item_qty = edtItemQty.text.toString()
                 items.item_size = edtItemSize.text.toString()
-                items.item_mrp = edtItemMrp.text.toString()
+                items.item_mrp = edtItemMrp.text.toString()+"/-"
 
                 itemRef.push().setValue(items).addOnCompleteListener(baseContext){task ->
                    if (task.isSuccessful) {
-                       clearData()
-                       closeLoader()
-                       Utils.showToast(baseContext,"Item Added")
+
+                       if(getUserData().status == "1"){
+                           addData(items)
+                       }else{
+                           clearData()
+                           closeLoader()
+                           Utils.showToast(baseContext,"Item Added")
+
+                       }
                    }else {
                        closeLoader()
                        Utils.showToast(baseContext,task.exception?.message)
-
                    }
 
                 }
             }
         }
+    }
+
+    private fun addData(items: Items) {
+        userRef.child(getUserId()).child(Constant.ITEMS).push().setValue(items).addOnCompleteListener (baseContext){task ->
+            if (task.isSuccessful){
+                clearData()
+                closeLoader()
+                Utils.showToast(baseContext,"Item Added")
+            }else{
+                Utils.showToast(baseContext,task.exception?.message)
+                closeLoader()
+            }
+        }
+
     }
 
     private fun clearData() {

@@ -29,6 +29,10 @@ abstract class FragBase : Fragment() {
         return Gson().fromJson(Prefs.getString(PrefKeys.USER_DATA, ""), User::class.java)
     }
 
+    fun getUserId(): String {
+        return Prefs.getString(PrefKeys.USER_ID,"")
+    }
+
     lateinit var baseContext: ActBase
 
 
@@ -55,6 +59,9 @@ abstract class FragBase : Fragment() {
     fun closeLoader(){
         if(baseContext is ActMain){
             (baseContext as? ActMain)?.closeIroidLoader()
+        }
+        if(baseContext is ActLogin){
+            (baseContext as? ActLogin)?.closeIroidLoader()
         }
     }
 

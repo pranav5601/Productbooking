@@ -20,4 +20,9 @@
     <string name="price">Price</string>
     <string name="add_item">Add Item</string>
     <string name="sender">Sender</string>
+    <string name="items_not_found">Items not found</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="name">Name</string>
+    <string name="address">Address</string>
+    <string name="number_of_items_ordered">Number of items ordered</string>
 </resources>

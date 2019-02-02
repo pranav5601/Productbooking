@@ -21,7 +21,6 @@ class FragItemDetails : FragBase() {
 
     override fun setUpView() {
         setBarTitle("Item Details")
-        Utils.showToast(baseContext, items.from_id)
         getUserInfo(items.from_id)
         showLoader()
 
