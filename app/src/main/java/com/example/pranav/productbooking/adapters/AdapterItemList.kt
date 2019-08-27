@@ -9,7 +9,7 @@ import com.example.pranav.productbooking.R
 import com.example.pranav.productbooking.model.Items
 import kotlinx.android.synthetic.main.cell_item_list.view.*
 
-class AdapterItemList(val context: Activity,val itemList: ArrayList<Items>,val listener: (Items) -> Unit): RecyclerView.Adapter<AdapterItemList.ViewHolder>() {
+class AdapterItemList(val context: Activity, private val itemList: ArrayList<Items>, private val listener: (Items) -> Unit): RecyclerView.Adapter<AdapterItemList.ViewHolder>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, position: Int): ViewHolder {
@@ -24,12 +24,12 @@ class AdapterItemList(val context: Activity,val itemList: ArrayList<Items>,val l
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bindItems(itemList.get(position),context,listener)
+        holder.bindItems(itemList[position],listener)
     }
 
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        fun bindItems(items: Items, activity: Activity, listener: (Items) -> Unit) = with(itemView) {
+        fun bindItems(items: Items, listener: (Items) -> Unit) = with(itemView) {
 
             itemView.setOnClickListener { listener(items) }
 

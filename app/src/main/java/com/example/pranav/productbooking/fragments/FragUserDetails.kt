@@ -22,39 +22,38 @@ class FragUserDetails : FragBase() {
     }
 
     private fun setItemData() {
-         val itemRef = FirebaseDatabase.getInstance().reference.child(Constant.USER).child(user.user_id)
+        val itemRef = FirebaseDatabase.getInstance().reference.child(Constant.USER).child(user.user_id)
 
-        itemRef.addValueEventListener(object: ValueEventListener{
+        itemRef.addValueEventListener(object : ValueEventListener {
             override fun onCancelled(error: DatabaseError?) {
 
             }
 
             override fun onDataChange(data: DataSnapshot?) {
-                if(data?.child(Constant.ITEMS)?.exists()!!){
-                   itemRef.child(Constant.ITEMS).addChildEventListener(object: ChildEventListener{
-                       override fun onCancelled(p0: DatabaseError?) {
+                if (data?.child(Constant.ITEMS)?.exists()!!) {
+                    itemRef.child(Constant.ITEMS).addChildEventListener(object : ChildEventListener {
+                        override fun onCancelled(p0: DatabaseError?) {
 
-                       }
+                        }
 
-                       override fun onChildMoved(p0: DataSnapshot?, p1: String?) {
+                        override fun onChildMoved(p0: DataSnapshot?, p1: String?) {
 
-                       }
+                        }
 
-                       override fun onChildChanged(p0: DataSnapshot?, p1: String?) {
+                        override fun onChildChanged(p0: DataSnapshot?, p1: String?) {
 
-                       }
+                        }
 
-                       override fun onChildAdded(data: DataSnapshot?, title: String?) {
-                           items = data?.getValue<Items>(Items::class.java)!!
-                           itemList.add(items)
-                           Log.e("itemList",itemList.toString())
-                           txtUserOrder.text = ""+itemList.size
-                       }
-
-                       override fun onChildRemoved(p0: DataSnapshot?) {
-                           TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-                       }
-                   })
+                        override fun onChildAdded(data: DataSnapshot?, title: String?) {
+                            items = data?.getValue<Items>(Items::class.java)!!
+                            itemList.add(items)
+                            Log.e("itemList", itemList.toString())
+                            txtUserOrder.text = "" + itemList.size
+                        }
+                        override fun onChildRemoved(p0: DataSnapshot?) {
+                            TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+                        }
+                    })
                 }
 
             }
@@ -66,7 +65,7 @@ class FragUserDetails : FragBase() {
     private fun setData() {
         txtShowUserName.text = user.user_name
         txtShowUserEmail.text = user.email_id
-        txtShowUserAddress.text = user.address_1 + "," + user.address_2
+        txtShowUserAddress.text = "${user.address_1},${user.address_2}"
         txtShowUserCity.text = user.city
         txtShowUserNumber.text = user.mobile
 
