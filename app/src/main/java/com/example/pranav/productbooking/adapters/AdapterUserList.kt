@@ -27,7 +27,7 @@ class AdapterUserList(val context: Activity, val userList: ArrayList<User>, val 
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bindItems(userList.get(position),context,listener)
+        holder.bindItems(userList[position],context,listener)
     }
 
 
